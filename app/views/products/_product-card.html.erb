@@ -26,11 +26,15 @@
         </h2>
       </header>
       <section class="product-card_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        <% if price = product.price_for_options(current_pricing_options)&.money %>
+      <% if spree_current_user%>
+        <% if price = product.price_for_options(current_pricing_options)&.money%>
           <span class="price selling" itemprop="price" content="<%= price.to_d %>">
             <%= price.to_html %>
           </span>
         <% end %>
+      <% else%>
+        Please login to see price
+      <% end%>
         <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
       </section>
     </article>
