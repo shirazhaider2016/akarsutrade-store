@@ -76,7 +76,9 @@ class CartsController < StoreController
   end
 
   def check_logged_in_user
-    flash[:error] = 'Login or Create Account to place order'
-    redirect_to(login_path) && return unless spree_current_user
+    unless spree_current_user
+      flash[:error] = 'Login or Create Account to place order'
+      redirect_to(login_path) && return
+    end
   end
 end
