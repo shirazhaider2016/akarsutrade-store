@@ -3,7 +3,7 @@
     <%= product.name %>
   </h1>
 
-  <% if product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
+  <% if spree_current_user && product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
     <h2 class="product-header__title" id="product-price">
       <%= content_tag(
         :span,
@@ -20,5 +20,7 @@
         content: current_pricing_options.currency
       ) %>
     </h2>
+  <% else%>
+    Please login to see price
   <% end %>
 </header>

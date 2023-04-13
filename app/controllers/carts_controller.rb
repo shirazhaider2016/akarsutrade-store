@@ -5,6 +5,7 @@ class CartsController < StoreController
 
   respond_to :html
 
+  before_action :check_logged_in_user
   before_action :store_guest_token
   before_action :assign_order, only: :update
   # note: do not lock the #edit action because that's where we redirect when we fail to acquire a lock
@@ -74,4 +75,8 @@ class CartsController < StoreController
     end
   end
 
+  def check_logged_in_user
+    flash[:error] = 'Login or Create Account to place order'
+    redirect_to(login_path) && return unless spree_current_user
+  end
 end
