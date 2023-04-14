@@ -217,6 +217,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.14.3-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     omnes (0.2.2)
@@ -224,6 +226,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.2.0)
       ast (~> 2.4.1)
+    pg (1.4.6)
     polyglot (0.3.5)
     psych (4.0.6)
       stringio
@@ -396,7 +399,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.2-x86_64-linux)
     state_machines (0.5.0)
     state_machines-activemodel (0.8.0)
       activemodel (>= 5.1)
@@ -444,6 +446,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -458,6 +461,7 @@ DEPENDENCIES
   ffaker (~> 2.13)
   importmap-rails
   jbuilder
+  pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
   rails-controller-testing (~> 1.0.5)
@@ -475,7 +479,6 @@ DEPENDENCIES
   solidus_sample (~> 3.3)
   solidus_support
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   truncate_html
   turbo-rails
